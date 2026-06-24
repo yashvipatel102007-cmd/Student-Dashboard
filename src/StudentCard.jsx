@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function StudentCard({ name, branch, year }) {
+function StudentCard({id, name, branch, year, onDelete}) {
   const [likes, setLikes] = useState(0)
   const [showDetails, setShowDetails] = useState(false)
 
@@ -22,6 +22,7 @@ function StudentCard({ name, branch, year }) {
       <p>Likes: {likes}</p>
       <button onClick={() => setLikes(likes + 1)}>👍 Like</button>
       <button onClick={() => setLikes(0)}>Reset</button>
+      <button onClick={() => onDelete(id)}>Delete</button>
     </div>
   )
 }
